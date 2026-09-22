@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide it!</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="Images/Copilot_20260920_111618.png">
+</head>
+<body>
+    <div id="overlay"></div>
+    <div id="accountPanel">
+        <button id="closePanel">×</button>
+        <h2 id="loginH2">Log in</h2>
+        <form>
+            <label for="username" id="usernameLabel">Username</label>
+            <input type="text" id="username" required maxlength="15" minlength="2">
+
+            <label for="email" id="emailLabel">Email</label>
+            <input type="email" id="email" required>
+            
+            <label for="password" id="passwordLabel">Password</label>
+            <input type="password" id="password" required>
+            <p id="accountError"></p>
+
+            <button type="submit" id="loginButton">Log in</button>
+        </form>
+
+        <p id="noAccount"><span id="accountText">Don't have an account? </span><a id="signupLink">Sign up</a></p>
+    </div>
+    <header>
+        <button class="account" id="login">Log in</button>
+        <button class="account" id="signup">Sign up</button>
+    </header>
+    <h1>Slide it!</h1>
+    <p>Slide the tiles into the correct order!</p>
+    <p>Or use the arrow keys!</p>
+    <button id="newGame">New Game</button>
+    <main>
+        <div class="game-area">
+            <div class="stats">
+                <div id="moves">Moves: 0</div>
+                <div id="time">Time: 0</div>
+            </div>
+
+            <select id="dropdown">
+                <option class="select-buttons" value="3">3x3</option>
+                <option class="select-buttons" value="4">4x4</option>
+                <option class="select-buttons" value="5">5x5</option>
+            </select>
+
+            <p id="winMessage"></p>
+
+            <div class="container">
+                <div class="tiles">1</div>
+                <div class="tiles">2</div>
+                <div class="tiles">3</div>
+                <div class="tiles">4</div>
+                <div class="tiles">5</div>
+                <div class="tiles">6</div>
+                <div class="tiles">7</div>
+                <div class="tiles">8</div>
+                <div class="blank"></div>
+            </div>
+        </div>
+
+        <div id="scoreboard">
+            <h2>🏆 Scoreboard</h2>
+            <div id="scoreList"></div>
+        </div>
+    </main>
+    <p>Developed by: Qusay Mohanad Abu-Nayla • 2026</p>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+

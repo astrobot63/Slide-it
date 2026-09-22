@@ -1,0 +1,405 @@
+body {
+    background-color: #0f172a;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+}
+
+h1 {
+    color: #ffffff;
+    font-size: 32px;
+    margin: 20px;
+}
+
+p {
+    color: #ffffff;
+    font-size: 16px;
+}
+
+/* Buttons */
+
+button {
+    background-color: #2563eb;
+    color: #ffffff;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition:
+        0.2s transform ease,
+        0.2s background-color ease,
+        0.2s box-shadow ease;
+}
+
+button:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* Puzzle */
+
+.container {
+    width: 320px;
+    height: 320px;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    border-radius: 10px;
+    box-shadow: 4px 12px 12px rgba(0, 0, 0, 0.2);
+}
+
+.tiles {
+    background-color: #ffffff;
+    color: #0f172a;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    cursor: pointer;
+    min-width: 0;
+    width: 100%;
+    height: 100%;
+    transition:
+        0.2s background-color ease,
+        0.2s transform ease,
+        0.2s box-shadow ease;
+}
+
+.tiles:hover {
+    background-color: #dbeafe;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.tiles:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.blank {
+    background-color: #1e293b;
+    cursor: default;
+    border-radius: 8px;
+}
+
+/* Stats */
+
+.stats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.stats div {
+    background-color: #1e293b;
+    color: #ffffff;
+    padding: 8px 12px;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Win message */
+
+#winMessage {
+    color: #22c55e;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 15px;
+}
+
+/* Puzzle size selector */
+
+select {
+    font-size: 20px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 8px;
+    width: 150px;
+    cursor: pointer;
+    background-color: #2563eb;
+    color: #ffffff;
+    transition:
+        0.2s background-color ease,
+        0.2s transform ease,
+        0.2s box-shadow ease;
+}
+
+select:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
+}
+
+.select-buttons {
+    border: 1px solid black;
+}
+
+/* Header */
+
+header {
+    background-color: #020617;
+    height: 70px;
+    padding: 0 15px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+/* Account buttons */
+
+.account {
+    margin-top: 15px;
+    background-color: #7c3aed;
+}
+
+.account:hover {
+    background-color: #6d28d9;
+    box-shadow: 0 4px 10px rgba(124, 58, 237, 0.3);
+}
+
+#login {
+    margin-right: 10px;
+}
+
+/* Account overlay */
+
+#overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    display: none;
+}
+
+/* Account panel */
+
+#accountPanel {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    height: 425px;
+    background-color: #1e293b;
+    border-radius: 12px;
+    z-index: 1001;
+    display: none;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+}
+
+#closePanel {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    background-color: #334155;
+    border-radius: 6px;
+}
+
+#closePanel:hover {
+    background-color: #475569;
+}
+
+/* Account heading */
+
+#loginH2 {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Account inputs */
+
+#username,
+#email,
+#password {
+    width: 100%;
+    box-sizing: border-box;
+    height: 42px;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #0f172a;
+    color: #ffffff;
+    border: 1px solid #475569;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.2s border-color ease, 0.2s box-shadow ease;
+}
+
+#username:focus,
+#email:focus,
+#password:focus {
+    border-color: #7c3aed;
+    box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.2);
+}
+
+#usernameLabel,
+#emailLabel,
+#passwordLabel {
+    color: #ffffff;
+    display: block;
+}
+
+#usernameLabel {
+    margin-bottom: 8px;
+}
+
+#emailLabel,
+#passwordLabel {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+/* Signup link */
+
+#signupLink {
+    color: #3030ff;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#signupLink:hover {
+    color: #6366f1;
+}
+
+/* Login button */
+
+#loginButton {
+    background-color: #7c3aed;
+    margin-top: 10px;
+}
+
+#loginButton:hover {
+    background-color: #6d28d9;
+}
+
+/* Account errors */
+
+#accountError {
+    color: #ef4444;
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+/* Scoreboard */
+
+#scoreboard {
+    width: 90%;
+    max-width: 500px;
+    margin: 25px auto;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #1e293b;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+#scoreboard h2 {
+    color: #ffffff;
+    font-size: 24px;
+    margin: 0 0 15px 0;
+    font-weight: bold;
+}
+
+#scoreList div {
+    background-color: #0f172a;
+    color: #ffffff;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+#scoreList .score-entry {
+    transition:
+        0.2s background-color ease,
+        0.2s transform ease;
+}
+
+#scoreList .score-entry:hover {
+    background-color: #172033;
+    transform: translateY(-1px);
+}
+
+.score-header,
+.score-entry {
+    display: grid;
+    grid-template-columns: 30px 2fr 1.2fr 1.2fr 1.2fr 1.2fr;
+    gap: 8px;
+    text-align: center;
+    align-items: center;
+}
+
+.score-header {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.score-header span:nth-child(2),
+.score-entry span:nth-child(2) {
+    text-align: left;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+    .container {
+        width: 90vw;
+        height: 90vw;
+        max-width: 320px;
+        max-height: 320px;
+    }
+
+    .stats {
+        flex-wrap: wrap;
+    }
+
+    #scoreboard {
+        width: 95%;
+        margin: 20px auto;
+        padding: 15px;
+        overflow-x: auto;
+    }
+
+    .score-header,
+    .score-entry {
+        gap: 5px;
+        font-size: 14px;
+    }
+
+    #scoreList div {
+        padding: 8px;
+    }
+
+    #accountPanel {
+        width: 90%;
+        max-width: 350px;
+    }
+}
