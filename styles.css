@@ -404,7 +404,6 @@ header {
     }
 }
 #loginNotice {
-    position: fixed;
     top: 10px;
     left: 10px;
     margin: 0;
