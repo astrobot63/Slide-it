@@ -403,3 +403,11 @@ header {
         max-width: 350px;
     }
 }
+#loginNotice {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    margin: 0;
+    font-size: 13px;
+    z-index: 1000;
+}
