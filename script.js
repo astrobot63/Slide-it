@@ -132,6 +132,9 @@ function moveWithKeyboard(direction) {
 
 
 document.addEventListener("keydown", (event) => {
+    if (["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(event.key)) {
+    event.preventDefault();
+    }
     if (overlay.style.display === "block") {
         return
     }
